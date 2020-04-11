@@ -9,7 +9,7 @@ namespace ImageAdaptation
 {
   class InvertFilter : Filters
   {
-    public override Color calculateNewPixelColor(Bitmap sourseImage, int x, int y)
+    protected override Color calculateNewPixelColor(Bitmap sourseImage, int x, int y)
     {
       Color sourseColor = sourseImage.GetPixel(x, y);
       Color resultColor = Color.FromArgb(255 - sourseColor.R,

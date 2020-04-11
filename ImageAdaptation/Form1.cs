@@ -74,5 +74,17 @@ namespace ImageAdaptation
     {
       Close();
     }
+
+    private void blurToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Filters filter = new BlurFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
+
+    private void gaussianToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Filters filter = new GaussianFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
   }
 }

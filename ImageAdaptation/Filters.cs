@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.ComponentModel;
+using System.Threading;
 
 namespace ImageAdaptation
 {
@@ -28,7 +29,7 @@ namespace ImageAdaptation
       return resurseImage;
     }
 
-    public abstract Color calculateNewPixelColor(Bitmap sourseImage, int x, int y);
+    protected abstract Color calculateNewPixelColor(Bitmap sourseImage, int x, int y);
 
     public int clamp(int value, int min, int max)
     {

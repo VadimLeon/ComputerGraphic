@@ -40,6 +40,8 @@
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.button1 = new System.Windows.Forms.Button();
+      this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.gaussianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -102,7 +104,7 @@
       this.pointToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inversionToolStripMenuItem});
       this.pointToolStripMenuItem.Name = "pointToolStripMenuItem";
-      this.pointToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+      this.pointToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.pointToolStripMenuItem.Text = "Point";
       // 
       // inversionToolStripMenuItem
@@ -114,8 +116,11 @@
       // 
       // matrixToolStripMenuItem
       // 
+      this.matrixToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.blurToolStripMenuItem,
+            this.gaussianToolStripMenuItem});
       this.matrixToolStripMenuItem.Name = "matrixToolStripMenuItem";
-      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.matrixToolStripMenuItem.Text = "Matrix";
       // 
       // progressBar1
@@ -142,6 +147,20 @@
       this.button1.Text = "Cancel";
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
+      // blurToolStripMenuItem
+      // 
+      this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
+      this.blurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.blurToolStripMenuItem.Text = "Blur";
+      this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
+      // 
+      // gaussianToolStripMenuItem
+      // 
+      this.gaussianToolStripMenuItem.Name = "gaussianToolStripMenuItem";
+      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.gaussianToolStripMenuItem.Text = "Gaussian";
+      this.gaussianToolStripMenuItem.Click += new System.EventHandler(this.gaussianToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -179,6 +198,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussianToolStripMenuItem;
     }
 }
 
