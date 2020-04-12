@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,18 +37,26 @@
       this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.pointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.inversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.grayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.sepiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.addBrightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.matrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.gaussianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.gaussianToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.sharpnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.button1 = new System.Windows.Forms.Button();
-      this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.gaussianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
       // pictureBox1
       // 
+      this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.pictureBox1.Location = new System.Drawing.Point(0, 27);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new System.Drawing.Size(684, 733);
@@ -79,14 +88,14 @@
       // openToolStripMenuItem
       // 
       this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-      this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+      this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.openToolStripMenuItem.Text = "Open";
       this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
       // 
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.exitToolStripMenuItem.Text = "Exit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
@@ -102,32 +111,90 @@
       // pointToolStripMenuItem
       // 
       this.pointToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inversionToolStripMenuItem});
+            this.inversionToolStripMenuItem,
+            this.grayToolStripMenuItem,
+            this.sepiaToolStripMenuItem,
+            this.addBrightToolStripMenuItem});
       this.pointToolStripMenuItem.Name = "pointToolStripMenuItem";
-      this.pointToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.pointToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
       this.pointToolStripMenuItem.Text = "Point";
       // 
       // inversionToolStripMenuItem
       // 
       this.inversionToolStripMenuItem.Name = "inversionToolStripMenuItem";
-      this.inversionToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+      this.inversionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
       this.inversionToolStripMenuItem.Text = "Inversion";
       this.inversionToolStripMenuItem.Click += new System.EventHandler(this.inversionToolStripMenuItem_Click);
+      // 
+      // grayToolStripMenuItem
+      // 
+      this.grayToolStripMenuItem.Name = "grayToolStripMenuItem";
+      this.grayToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+      this.grayToolStripMenuItem.Text = "Gray";
+      this.grayToolStripMenuItem.Click += new System.EventHandler(this.grayToolStripMenuItem_Click);
+      // 
+      // sepiaToolStripMenuItem
+      // 
+      this.sepiaToolStripMenuItem.Name = "sepiaToolStripMenuItem";
+      this.sepiaToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+      this.sepiaToolStripMenuItem.Text = "Sepia";
+      this.sepiaToolStripMenuItem.Click += new System.EventHandler(this.sepiaToolStripMenuItem_Click);
+      // 
+      // addBrightToolStripMenuItem
+      // 
+      this.addBrightToolStripMenuItem.Name = "addBrightToolStripMenuItem";
+      this.addBrightToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+      this.addBrightToolStripMenuItem.Text = "Add bright";
+      this.addBrightToolStripMenuItem.Click += new System.EventHandler(this.addBrightToolStripMenuItem_Click);
       // 
       // matrixToolStripMenuItem
       // 
       this.matrixToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.blurToolStripMenuItem,
-            this.gaussianToolStripMenuItem});
+            this.gaussianToolStripMenuItem,
+            this.gaussianToolStripMenuItem1,
+            this.sharpnessToolStripMenuItem});
       this.matrixToolStripMenuItem.Name = "matrixToolStripMenuItem";
-      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
       this.matrixToolStripMenuItem.Text = "Matrix";
+      // 
+      // blurToolStripMenuItem
+      // 
+      this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
+      this.blurToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+      this.blurToolStripMenuItem.Text = "Blur";
+      this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
+      // 
+      // gaussianToolStripMenuItem
+      // 
+      this.gaussianToolStripMenuItem.Name = "gaussianToolStripMenuItem";
+      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+      this.gaussianToolStripMenuItem.Text = "Gaussian";
+      this.gaussianToolStripMenuItem.Click += new System.EventHandler(this.gaussianToolStripMenuItem_Click);
+      // 
+      // gaussianToolStripMenuItem1
+      // 
+      this.gaussianToolStripMenuItem1.Name = "gaussianToolStripMenuItem1";
+      this.gaussianToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+      this.gaussianToolStripMenuItem1.Text = "Gaussian";
+      this.gaussianToolStripMenuItem1.Click += new System.EventHandler(this.gaussianToolStripMenuItem1_Click);
+      // 
+      // sharpnessToolStripMenuItem
+      // 
+      this.sharpnessToolStripMenuItem.Name = "sharpnessToolStripMenuItem";
+      this.sharpnessToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+      this.sharpnessToolStripMenuItem.Text = "Sharpness";
+      this.sharpnessToolStripMenuItem.Click += new System.EventHandler(this.sharpnessToolStripMenuItem_Click);
       // 
       // progressBar1
       // 
+      this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.progressBar1.Location = new System.Drawing.Point(94, 0);
+      this.progressBar1.MaximumSize = new System.Drawing.Size(900, 23);
+      this.progressBar1.MinimumSize = new System.Drawing.Size(50, 23);
       this.progressBar1.Name = "progressBar1";
-      this.progressBar1.Size = new System.Drawing.Size(502, 23);
+      this.progressBar1.Size = new System.Drawing.Size(501, 23);
       this.progressBar1.TabIndex = 2;
       // 
       // backgroundWorker1
@@ -140,27 +207,14 @@
       // 
       // button1
       // 
-      this.button1.Location = new System.Drawing.Point(602, 0);
+      this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.button1.Location = new System.Drawing.Point(601, 0);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(82, 24);
       this.button1.TabIndex = 3;
       this.button1.Text = "Cancel";
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
-      // 
-      // blurToolStripMenuItem
-      // 
-      this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-      this.blurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.blurToolStripMenuItem.Text = "Blur";
-      this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
-      // 
-      // gaussianToolStripMenuItem
-      // 
-      this.gaussianToolStripMenuItem.Name = "gaussianToolStripMenuItem";
-      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.gaussianToolStripMenuItem.Text = "Gaussian";
-      this.gaussianToolStripMenuItem.Click += new System.EventHandler(this.gaussianToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -171,7 +225,10 @@
       this.Controls.Add(this.progressBar1);
       this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.menuStrip1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
+      this.MaximumSize = new System.Drawing.Size(1000, 900);
+      this.MinimumSize = new System.Drawing.Size(600, 400);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Form1";
@@ -200,6 +257,11 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sepiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addBrightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussianToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sharpnessToolStripMenuItem;
     }
 }
 

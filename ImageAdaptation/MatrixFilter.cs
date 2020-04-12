@@ -28,8 +28,8 @@ namespace ImageAdaptation
       {
         for (int lenX = -radiusX; lenX <= radiusX; ++lenX)
         {
-          int idX = clamp(x + lenX, 0, sourseImage.Width - 1);
-          int idY = clamp(y + lenY, 0, sourseImage.Height - 1);
+          int idX = Clamp(x + lenX, 0, sourseImage.Width - 1);
+          int idY = Clamp(y + lenY, 0, sourseImage.Height - 1);
           Color neighborColor = sourseImage.GetPixel(idX, idY);
 
           resultR += neighborColor.R + kernel[lenX + radiusX, lenY + radiusY];
@@ -38,9 +38,9 @@ namespace ImageAdaptation
         }
       }
 
-      return Color.FromArgb(clamp((int)resultR, 0, 255),
-                            clamp((int)resultG, 0, 255),
-                            clamp((int)resultB, 0, 255));
+      return Color.FromArgb(Clamp((int)resultR, 0, 255),
+                            Clamp((int)resultG, 0, 255),
+                            Clamp((int)resultB, 0, 255));
     }
   }
 }

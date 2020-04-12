@@ -86,5 +86,35 @@ namespace ImageAdaptation
       Filters filter = new GaussianFilter();
       backgroundWorker1.RunWorkerAsync(filter);
     }
+
+    private void grayToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Filters filter = new GrayScaleFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
+
+    private void sepiaToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Filters filter = new SepiaFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
+
+    private void addBrightToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Filters filter = new BrightAddFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
+
+    private void gaussianToolStripMenuItem1_Click(object sender, EventArgs e)
+    {
+      Filters filter = new GaussianFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
+
+    private void sharpnessToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Filters filter = new SharpnessFilter();
+      backgroundWorker1.RunWorkerAsync(filter);
+    }
   }
 }

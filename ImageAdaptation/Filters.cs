@@ -31,7 +31,7 @@ namespace ImageAdaptation
 
     protected abstract Color calculateNewPixelColor(Bitmap sourseImage, int x, int y);
 
-    public int clamp(int value, int min, int max)
+    public int Clamp(int value, int min, int max)
     {
       if (value < min) return max;
       if (value > max) return min;
