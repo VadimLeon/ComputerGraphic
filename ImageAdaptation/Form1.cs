@@ -36,7 +36,22 @@ namespace ImageAdaptation
         pictureBox1.Refresh();
       }
     }
-
+    private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      SaveFileDialog saveDialog = new SaveFileDialog();
+      saveDialog.Filter = "Save files (*.png)|*.png|Save files (*.jpg)|*.jpg|Save files (*.bmp)|*.bmp";
+      saveDialog.RestoreDirectory = true;
+                
+      if (saveDialog.ShowDialog() == DialogResult.OK)
+      {
+        switch (saveDialog.FilterIndex)
+        {
+          case 0: image.Save(saveDialog.FileName, System.Drawing.Imaging.ImageFormat.Png); break;
+          case 1: image.Save(saveDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg); break;
+          case 2: image.Save(saveDialog.FileName, System.Drawing.Imaging.ImageFormat.Bmp); break;
+        }
+      }
+    }
     private void inversionToolStripMenuItem_Click(object sender, EventArgs e)
     {
       InvertFilter filter = new InvertFilter();
@@ -104,10 +119,9 @@ namespace ImageAdaptation
       Filters filter = new BrightAddFilter();
       backgroundWorker1.RunWorkerAsync(filter);
     }
-
-    private void gaussianToolStripMenuItem1_Click(object sender, EventArgs e)
+    private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Filters filter = new GaussianFilter();
+      Filters filter = new SobelFilter();
       backgroundWorker1.RunWorkerAsync(filter);
     }
 

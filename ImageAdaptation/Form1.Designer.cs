@@ -43,11 +43,12 @@
       this.matrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.gaussianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.gaussianToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.sharpnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.button1 = new System.Windows.Forms.Button();
+      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -80,6 +81,7 @@
       // 
       this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
       this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -116,7 +118,7 @@
             this.sepiaToolStripMenuItem,
             this.addBrightToolStripMenuItem});
       this.pointToolStripMenuItem.Name = "pointToolStripMenuItem";
-      this.pointToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+      this.pointToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.pointToolStripMenuItem.Text = "Point";
       // 
       // inversionToolStripMenuItem
@@ -152,37 +154,37 @@
       this.matrixToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.blurToolStripMenuItem,
             this.gaussianToolStripMenuItem,
-            this.gaussianToolStripMenuItem1,
+            this.sobelToolStripMenuItem,
             this.sharpnessToolStripMenuItem});
       this.matrixToolStripMenuItem.Name = "matrixToolStripMenuItem";
-      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.matrixToolStripMenuItem.Text = "Matrix";
       // 
       // blurToolStripMenuItem
       // 
       this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-      this.blurToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+      this.blurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.blurToolStripMenuItem.Text = "Blur";
       this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
       // 
       // gaussianToolStripMenuItem
       // 
       this.gaussianToolStripMenuItem.Name = "gaussianToolStripMenuItem";
-      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.gaussianToolStripMenuItem.Text = "Gaussian";
       this.gaussianToolStripMenuItem.Click += new System.EventHandler(this.gaussianToolStripMenuItem_Click);
       // 
-      // gaussianToolStripMenuItem1
+      // sobelToolStripMenuItem
       // 
-      this.gaussianToolStripMenuItem1.Name = "gaussianToolStripMenuItem1";
-      this.gaussianToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
-      this.gaussianToolStripMenuItem1.Text = "Gaussian";
-      this.gaussianToolStripMenuItem1.Click += new System.EventHandler(this.gaussianToolStripMenuItem1_Click);
+      this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem1";
+      this.sobelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.sobelToolStripMenuItem.Text = "Sobel";
+      this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
       // 
       // sharpnessToolStripMenuItem
       // 
       this.sharpnessToolStripMenuItem.Name = "sharpnessToolStripMenuItem";
-      this.sharpnessToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+      this.sharpnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.sharpnessToolStripMenuItem.Text = "Sharpness";
       this.sharpnessToolStripMenuItem.Click += new System.EventHandler(this.sharpnessToolStripMenuItem_Click);
       // 
@@ -215,6 +217,13 @@
       this.button1.Text = "Cancel";
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
+      // saveToolStripMenuItem
+      // 
+      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+      this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.saveToolStripMenuItem.Text = "Save";
+      this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -260,8 +269,9 @@
         private System.Windows.Forms.ToolStripMenuItem grayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sepiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addBrightToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gaussianToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sharpnessToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 
