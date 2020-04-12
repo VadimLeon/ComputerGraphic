@@ -13,6 +13,8 @@ namespace ImageAdaptation
   public partial class Form1 : Form
   {
     Bitmap image;
+    Bitmap lastImage;
+
     public Form1()
     {
       InitializeComponent();
@@ -31,6 +33,7 @@ namespace ImageAdaptation
       if (openDialog.ShowDialog() == DialogResult.OK)
       {
         image = new Bitmap(openDialog.FileName);
+        lastImage = new Bitmap(image);
 
         pictureBox1.Image = image;
         pictureBox1.Refresh();
@@ -61,9 +64,13 @@ namespace ImageAdaptation
     private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
     {
       Bitmap mainImage = ((Filters)e.Argument).processImage(image, backgroundWorker1);
-      if (backgroundWorker1.CancellationPending != true) image = mainImage;
+      if (backgroundWorker1.CancellationPending != true) seveNewImage(mainImage);
    }
-
+    private void seveNewImage(Bitmap newImage)
+    {
+      lastImage = image;
+      image = newImage;
+    }
     private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
     {
       progressBar1.Value = e.ProgressPercentage;
@@ -129,6 +136,13 @@ namespace ImageAdaptation
     {
       Filters filter = new SharpnessFilter();
       backgroundWorker1.RunWorkerAsync(filter);
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+      seveNewImage(lastImage);
+      pictureBox1.Image = image;
+      pictureBox1.Refresh();
     }
   }
 }

@@ -33,6 +33,7 @@
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.pointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,7 @@
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.button1 = new System.Windows.Forms.Button();
-      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.button2 = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -90,14 +91,21 @@
       // openToolStripMenuItem
       // 
       this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-      this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
       this.openToolStripMenuItem.Text = "Open";
       this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+      // 
+      // saveToolStripMenuItem
+      // 
+      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+      this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+      this.saveToolStripMenuItem.Text = "Save";
+      this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
       // 
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
       this.exitToolStripMenuItem.Text = "Exit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
@@ -118,7 +126,7 @@
             this.sepiaToolStripMenuItem,
             this.addBrightToolStripMenuItem});
       this.pointToolStripMenuItem.Name = "pointToolStripMenuItem";
-      this.pointToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.pointToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
       this.pointToolStripMenuItem.Text = "Point";
       // 
       // inversionToolStripMenuItem
@@ -157,34 +165,34 @@
             this.sobelToolStripMenuItem,
             this.sharpnessToolStripMenuItem});
       this.matrixToolStripMenuItem.Name = "matrixToolStripMenuItem";
-      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.matrixToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
       this.matrixToolStripMenuItem.Text = "Matrix";
       // 
       // blurToolStripMenuItem
       // 
       this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-      this.blurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.blurToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
       this.blurToolStripMenuItem.Text = "Blur";
       this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
       // 
       // gaussianToolStripMenuItem
       // 
       this.gaussianToolStripMenuItem.Name = "gaussianToolStripMenuItem";
-      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.gaussianToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
       this.gaussianToolStripMenuItem.Text = "Gaussian";
       this.gaussianToolStripMenuItem.Click += new System.EventHandler(this.gaussianToolStripMenuItem_Click);
       // 
       // sobelToolStripMenuItem
       // 
-      this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem1";
-      this.sobelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
+      this.sobelToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
       this.sobelToolStripMenuItem.Text = "Sobel";
       this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
       // 
       // sharpnessToolStripMenuItem
       // 
       this.sharpnessToolStripMenuItem.Name = "sharpnessToolStripMenuItem";
-      this.sharpnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.sharpnessToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
       this.sharpnessToolStripMenuItem.Text = "Sharpness";
       this.sharpnessToolStripMenuItem.Click += new System.EventHandler(this.sharpnessToolStripMenuItem_Click);
       // 
@@ -192,11 +200,11 @@
       // 
       this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.progressBar1.Location = new System.Drawing.Point(94, 0);
-      this.progressBar1.MaximumSize = new System.Drawing.Size(900, 23);
-      this.progressBar1.MinimumSize = new System.Drawing.Size(50, 23);
+      this.progressBar1.Location = new System.Drawing.Point(121, 2);
+      this.progressBar1.MaximumSize = new System.Drawing.Size(900, 22);
+      this.progressBar1.MinimumSize = new System.Drawing.Size(50, 22);
       this.progressBar1.Name = "progressBar1";
-      this.progressBar1.Size = new System.Drawing.Size(501, 23);
+      this.progressBar1.Size = new System.Drawing.Size(476, 22);
       this.progressBar1.TabIndex = 2;
       // 
       // backgroundWorker1
@@ -210,7 +218,7 @@
       // button1
       // 
       this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.button1.Location = new System.Drawing.Point(601, 0);
+      this.button1.Location = new System.Drawing.Point(601, 1);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(82, 24);
       this.button1.TabIndex = 3;
@@ -218,18 +226,25 @@
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
-      // saveToolStripMenuItem
+      // button2
       // 
-      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-      this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.saveToolStripMenuItem.Text = "Save";
-      this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+      this.button2.FlatAppearance.BorderSize = 0;
+      this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+      this.button2.Location = new System.Drawing.Point(95, 3);
+      this.button2.Margin = new System.Windows.Forms.Padding(0);
+      this.button2.Name = "button2";
+      this.button2.Size = new System.Drawing.Size(20, 20);
+      this.button2.TabIndex = 4;
+      this.button2.UseVisualStyleBackColor = true;
+      this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(684, 761);
+      this.Controls.Add(this.button2);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.progressBar1);
       this.Controls.Add(this.pictureBox1);
@@ -272,6 +287,7 @@
         private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sharpnessToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 
