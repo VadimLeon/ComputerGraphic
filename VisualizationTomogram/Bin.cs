@@ -13,11 +13,8 @@ namespace VisualizationTomogram
     public static short[] array;
     public Bin() { }
 
-
-
     public void readBIN(string path)
     {
-      // функция считывания бинарного файла
       if (File.Exists(path))
       {
         BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open));
